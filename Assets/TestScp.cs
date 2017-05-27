@@ -6,10 +6,15 @@ using System;
 public class TestScp : MonoBehaviour {
 
     Action ad;
-    // Use this for initialization
+   
     void Start () {
         print("back");
+        //防止销毁
         DontDestroyOnLoad(gameObject);
+    }
+    void Update() {
+
+        transform.Rotate(Vector3.forward * Time.deltaTime * 20f);
     }
 	
 	// Update is called once per frame
@@ -22,4 +27,5 @@ public class TestScp : MonoBehaviour {
         SceneManager.LoadScene(0);
         print("jump");
     }
+    
 }
